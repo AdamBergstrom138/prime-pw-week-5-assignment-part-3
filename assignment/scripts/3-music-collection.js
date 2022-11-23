@@ -44,9 +44,22 @@ console.log(collection);
   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
   - Console.log the number of items in the array.
   - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
+*/
 
+function showCollection() {
+    console.log('running showCollection');
+    console.log(collection.length);
+    for (let i=0; i<collection.length; i++){
+        //console.log(collection[i]);
+        console.log(collection[i].title, 'by', collection[i].artist + ', published in', collection[i].yearPublished);
+    }
+    return true;
+}
+/*
 - Test the `showCollection` function.
-
+*/
+showCollection();
+/*
 - Add a function named `findByArtist`. This function should:
   - Take in `artist` (a string) parameter
   - Create an array to hold any results, empty to start
