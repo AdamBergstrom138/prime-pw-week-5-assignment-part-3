@@ -1,18 +1,45 @@
 console.log('***** Music Collection *****')
 /*
 - Create a variable `collection` that starts as an empty array.
-
+*/
+let collection = [];
+/*
 - Add a function named `addToCollection`. This function should:
   - Take in the album's `title`, `artist`, `yearPublished` as input parameters
   - Create a new object having the above properties
   - Add the new object to the end of the `collection` array
   - Return the newly created object
-
+*/
+function addToCollection(title, artist, yearPublished){
+    console.log('running addToCollection');
+    let album = {
+        title: title,
+        artist: artist,
+        yearPublished: yearPublished
+    };
+    collection.push(album);
+    return album;
+}
+/*
 - Test the `addToCollection` function:
   - Add 6 albums to your collection. Aim to have a mix of both same and different artists and published years. (Feel free to share your musical interests, or make stuff up. Totally fine either way.)
   - Console.log each album as added using the returned value.
   - After all are added, console.log the `collection` array.
-
+*/
+console.log(addToCollection('Rubber Soul', 'The Beatles', 1965));
+//addToCollection('Rubber Soul', 'The Beatles', 1965);
+console.log(addToCollection('Bringing it All Back Home', 'Bob Dylan', 1965));
+//addToCollection('Bringing it All Back Home', 'Bob Dylan', 1965);
+console.log(addToCollection('Blonde on Blonde', 'Bob Dylan', 1966));
+//addToCollection('Blonde on Blonde', 'Bob Dylan', 1966)
+console.log(addToCollection('Dylan and the Dead', 'Bob Dylan and the Grateful Dead', 1989));
+//addToCollection('Dylan and the Dead', 'Bob Dylan and the Grateful Dead', 1989);
+console.log(addToCollection('Led Zeppelin', 'Led Zeppelin', 1969));
+//addToCollection('Led Zeppelin', 'Led Zeppelin', 1969);
+console.log(addToCollection('Abbey Road', 'The Beatles', 1969));
+//addToCollection('Abbey Road', 'The Beatles', 1969);
+console.log(collection);
+/*
 - Add a function named `showCollection`. This function should:
   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
   - Console.log the number of items in the array.
