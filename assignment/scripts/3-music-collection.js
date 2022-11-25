@@ -50,7 +50,7 @@ function showCollection() {
     console.log('running showCollection');
     console.log(collection.length);
     for (let i=0; i<collection.length; i++){
-        console.log(collection[i].title, 'by', collection[i].artist + ', published in', collection[i].yearPublished);
+        console.log(collection[i].title, 'by', collection[i].artist + ', published in', collection[i].yearPublished);   
     }
     return true;
 }
@@ -80,7 +80,7 @@ function findByArtist(artist) {
 /*
 - Test the `findByArtist` function. Make sure to test with an artist you know is in the collection, as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 */
-
+console.log(findByArtist('Led Zeppelin'));
 console.log(findByArtist('Bob Dylan'));
 console.log(findByArtist('Danzig'));
 /*
@@ -106,12 +106,14 @@ function search(artist, year) {
         if (artist === collection[i].artist && year === collection[i].yearPublished){
             searchArray.push(collection[i]);
         } else if (artist === undefined && year === undefined) {
-            return collection;
+            return showCollection();
         }
     }
     return searchArray;
 }
+
 console.log(search('The Beatles', 1965));
+console.log(search('Danzig', 1989));
 console.log(search());
 
 /*
